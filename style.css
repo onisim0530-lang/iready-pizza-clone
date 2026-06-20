@@ -1,0 +1,59 @@
+body {
+    background-color: #f0e6d2;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#game-container {
+    background-color: white;
+    border: 4px solid #5c4033;
+    border-radius: 12px;
+    width: 500px;
+    padding: 20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-bottom: 2px dashed #5c4033;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.screen { display: block; text-align: center; }
+.hidden { display: none !important; }
+button {
+    background-color: #e2725b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+button:hover { background-color: #c85a43; }
+#pizza-crust {
+    width: 200px;
+    height: 200px;
+    background-color: #f5deb3;
+    border: 8px solid #d2b48c;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+#customer-bubble {
+    background: #eef;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
