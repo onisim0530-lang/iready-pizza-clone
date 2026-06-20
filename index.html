@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostalgic Pizza Shop Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- TOP STATUS BAR -->
+        <header>
+            <div>Cash: $<span id="hud-money">50.00</span></div>
+            <div>Day: <span id="hud-day">1</span></div>
+            <div>Cheese Inventory: <span id="hud-cheese">10</span> units</div>
+        </header>
+
+        <!-- SCREEN 1: THE MARKET -->
+        <section id="screen-market" class="screen">
+            <h2>Phase 1: Buy Ingredients</h2>
+            <p>Compare the unit math to get the best deal!</p>
+            <div class="market-options">
+                <button onclick="buyCheese(10, 5.00)">Deal A: 10 Cheese for $5.00 ($0.50 each)</button>
+                <button onclick="buyCheese(30, 12.00)">Deal B: 30 Cheese for $12.00 ($0.40 each)</button>
+            </div>
+            <button class="next-btn" onclick="goToScreen('screen-pricing')">Go to Pricing &rarr;</button>
+        </section>
+
+        <!-- SCREEN 2: PRICING -->
+        <section id="screen-pricing" class="screen hidden">
+            <h2>Phase 2: Set Menu Price</h2>
+            <p>Cheese cost per pizza: $1.00. What will you charge customers?</p>
+            <label for="price-slider">Menu Price: $<span id="slider-val">4.00</span></label>
+            <input type="range" id="price-slider" min="1" max="15" step="0.5" value="4" oninput="updatePriceSlider(this.value)">
+            <br><br>
+            <button class="next-btn" onclick="startShopDay()">Open the Shop! &rarr;</button>
+        </section>
+
+        <!-- SCREEN 3: THE SHOP FRONT -->
+        <section id="screen-shop" class="screen hidden">
+            <h2>Phase 3: Serve Customers</h2>
+            <div id="customer-bubble">...Waiting for customer...</div>
+            <div id="pizza-crust" onclick="addCheeseToPizza()">
+                Click to add Cheese! <br> (<span id="pizza-cheese-count">0</span>/2 added)
+            </div>
+            <button id="serve-btn" onclick="servePizza()">Serve Pizza!</button>
+        </section>
+
+        <!-- SCREEN 4: END OF DAY LEDGER -->
+        <section id="screen-ledger" class="screen hidden">
+            <h2>Phase 4: Daily Profit Statement</h2>
+            <p>Daily Revenue: $<span id="ledger-revenue">0.00</span></p>
+            <p>Net Day Profit: $<span id="ledger-profit">0.00</span></p>
+            <button class="next-btn" onclick="nextDay()">Start Next Day &rarr;</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
